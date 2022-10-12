@@ -1,0 +1,14 @@
+{
+  "name": "eq_home",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "mermaid": "^8.6.4",
+    "vuepress": "^1.5.2"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  }
+}

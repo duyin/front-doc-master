@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Vue规范 | 遛遛科技-前端规范</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="Just playing around">
+    
+    <link rel="preload" href="/assets/css/0.styles.e7f06854.css" as="style"><link rel="preload" href="/assets/js/app.2f108bbb.js" as="script"><link rel="preload" href="/assets/js/2.bb75b389.js" as="script"><link rel="preload" href="/assets/js/14.71e3d84a.js" as="script"><link rel="prefetch" href="/assets/js/10.b7ccda42.js"><link rel="prefetch" href="/assets/js/11.26c742c8.js"><link rel="prefetch" href="/assets/js/12.a7cf2052.js"><link rel="prefetch" href="/assets/js/13.9f04797b.js"><link rel="prefetch" href="/assets/js/15.43784afd.js"><link rel="prefetch" href="/assets/js/3.c361861d.js"><link rel="prefetch" href="/assets/js/4.a1a3908c.js"><link rel="prefetch" href="/assets/js/5.be2e27d3.js"><link rel="prefetch" href="/assets/js/6.faf578aa.js"><link rel="prefetch" href="/assets/js/7.c0a9fec0.js"><link rel="prefetch" href="/assets/js/8.a87a1a5c.js"><link rel="prefetch" href="/assets/js/9.e0dee70e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e7f06854.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">遛遛科技-前端规范</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/guide.html" class="sidebar-link">概述</a></li><li><a href="/html.html" class="sidebar-link">HTML 规范</a></li><li><a href="/css.html" class="sidebar-link">CSS 规范</a></li><li><a href="/javascript.html" class="sidebar-link">JavaScript 规范</a></li><li><a href="/vue.html" aria-current="page" class="active sidebar-link">Vue规范</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vue.html#一、强制" class="sidebar-link">一、强制</a></li><li class="sidebar-sub-header"><a href="/vue.html#_1-组件名为多个单词" class="sidebar-link">1.组件名为多个单词</a></li><li class="sidebar-sub-header"><a href="/vue.html#_2-组件数据" class="sidebar-link">2. 组件数据</a></li><li class="sidebar-sub-header"><a href="/vue.html#_3-prop定义" class="sidebar-link">3. Prop定义</a></li><li class="sidebar-sub-header"><a href="/vue.html#_4-为v-for设置键值" class="sidebar-link">4. 为v-for设置键值</a></li><li class="sidebar-sub-header"><a href="/vue.html#_5-避免-v-if-和-v-for-用在一起" class="sidebar-link">5.避免 v-if 和 v-for 用在一起</a></li><li class="sidebar-sub-header"><a href="/vue.html#_6-为组件样式设置作用域" class="sidebar-link">6. 为组件样式设置作用域</a></li><li class="sidebar-sub-header"><a href="/vue.html#二、强烈推荐-增强可读性" class="sidebar-link">二、强烈推荐（增强可读性）</a></li><li class="sidebar-sub-header"><a href="/vue.html#_1-组件文件" class="sidebar-link">1. 组件文件</a></li><li class="sidebar-sub-header"><a href="/vue.html#_2-单文件组件文件的大小写" class="sidebar-link">2. 单文件组件文件的大小写</a></li><li class="sidebar-sub-header"><a href="/vue.html#_3-基础组件名" class="sidebar-link">3. 基础组件名</a></li><li class="sidebar-sub-header"><a href="/vue.html#_4-单例组件名" class="sidebar-link">4. 单例组件名</a></li><li class="sidebar-sub-header"><a href="/vue.html#_5-紧密耦合的组件名" class="sidebar-link">5. 紧密耦合的组件名</a></li><li class="sidebar-sub-header"><a href="/vue.html#_6-组件名中的单词顺序" class="sidebar-link">6. 组件名中的单词顺序</a></li><li class="sidebar-sub-header"><a href="/vue.html#_7-模板中的组件名大小写" class="sidebar-link">7. 模板中的组件名大小写</a></li><li class="sidebar-sub-header"><a href="/vue.html#_8-完整单词的组件名" class="sidebar-link">8. 完整单词的组件名</a></li><li class="sidebar-sub-header"><a href="/vue.html#_9-多个特性的元素" class="sidebar-link">9. 多个特性的元素</a></li><li class="sidebar-sub-header"><a href="/vue.html#_10-模板中简单的表达式" class="sidebar-link">10. 模板中简单的表达式</a></li><li class="sidebar-sub-header"><a href="/vue.html#_11-简单的计算属性" class="sidebar-link">11. 简单的计算属性</a></li><li class="sidebar-sub-header"><a href="/vue.html#_12-带引号的特性值" class="sidebar-link">12. 带引号的特性值</a></li><li class="sidebar-sub-header"><a href="/vue.html#_13-指令缩写" class="sidebar-link">13. 指令缩写</a></li><li class="sidebar-sub-header"><a href="/vue.html#三、谨慎使用" class="sidebar-link">三、谨慎使用</a></li><li class="sidebar-sub-header"><a href="/vue.html#_1-没有在-v-if-v-if-else-v-else-中使用-key" class="sidebar-link">1. 没有在 v-if/v-if-else/v-else 中使用 key</a></li><li class="sidebar-sub-header"><a href="/vue.html#_2-scoped-中的元素选择器" class="sidebar-link">2. scoped 中的元素选择器</a></li><li class="sidebar-sub-header"><a href="/vue.html#_3-隐性的父子组件通信" class="sidebar-link">3. 隐性的父子组件通信</a></li><li class="sidebar-sub-header"><a href="/vue.html#_4-非-flux-的全局状态管理" class="sidebar-link">4. 非 Flux 的全局状态管理</a></li><li class="sidebar-sub-header"><a href="/vue.html#四、推荐" class="sidebar-link">四、推荐</a></li><li class="sidebar-sub-header"><a href="/vue.html#_1-推荐使用vs-code进行前端编码-规定tab大小为2个空格" class="sidebar-link">1. 推荐使用vs code进行前端编码，规定Tab大小为2个空格</a></li><li class="sidebar-sub-header"><a href="/vue.html#_2-vs-code-插件" class="sidebar-link">2. vs code 插件</a></li><li class="sidebar-sub-header"><a href="/vue.html#代码风格规范类插件" class="sidebar-link">代码风格规范类插件</a></li><li class="sidebar-sub-header"><a href="/vue.html#其他插件-神器" class="sidebar-link">其他插件（神器）</a></li></ul></li><li><a href="/react.html" class="sidebar-link">React规范</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="vue规范"><a href="#vue规范" class="header-anchor">#</a> Vue规范</h1> <h2 id="一、强制"><a href="#一、强制" class="header-anchor">#</a> 一、强制</h2> <h2 id="_1-组件名为多个单词"><a href="#_1-组件名为多个单词" class="header-anchor">#</a> 1.组件名为多个单词</h2> <ul><li>组件名应该始终是多个单词的，根组件 App 除外。
+正例：</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'TodoItem'</span><span class="token punctuation">,</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>反例：</p> <div class="language-js extra-class"><pre class="language-js"><code>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Todo'</span><span class="token punctuation">,</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="_2-组件数据"><a href="#_2-组件数据" class="header-anchor">#</a> 2. 组件数据</h2> <ul><li>组件的 data 必须是一个函数。
+当在组件中使用 data 属性的时候 (除了 new Vue 外的任何地方)，它的值必须是返回一个对象的函数。</li></ul> <p>正例：</p> <div class="language-js extra-class"><pre class="language-js"><code>
+<span class="token comment">// In a .vue file</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token function">data</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">foo</span><span class="token operator">:</span> <span class="token string">'bar'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 在一个 Vue 的根实例上直接使用对象是可以的，</span>
+<span class="token comment">// 因为只存在一个这样的实例。</span>
+<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">foo</span><span class="token operator">:</span> <span class="token string">'bar'</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>反例：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">foo</span><span class="token operator">:</span> <span class="token string">'bar'</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="_3-prop定义"><a href="#_3-prop定义" class="header-anchor">#</a> 3. Prop定义</h2> <ul><li>Prop 定义应该尽量详细。
+在你提交的代码中，prop 的定义应该尽量详细，至少需要指定其类型。</li></ul> <p>正例：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token literal-property property">props</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">status</span><span class="token operator">:</span> String
+<span class="token punctuation">}</span>
+<span class="token comment">// 更好的做法！</span>
+<span class="token literal-property property">props</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">status</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">type</span><span class="token operator">:</span> String<span class="token punctuation">,</span>
+    <span class="token literal-property property">required</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">validator</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">[</span>
+        <span class="token string">'syncing'</span><span class="token punctuation">,</span>
+        <span class="token string">'synced'</span><span class="token punctuation">,</span>
+        <span class="token string">'version-conflict'</span><span class="token punctuation">,</span>
+        <span class="token string">'error'</span>
+      <span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token operator">!==</span> <span class="token operator">-</span><span class="token number">1</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>反例：</p> <div class="language-js extra-class"><pre class="language-js"><code>
+<span class="token comment">// 这样做只有开发原型系统时可以接受</span>
+<span class="token literal-property property">props</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'status'</span><span class="token punctuation">]</span>
+</code></pre></div><h2 id="_4-为v-for设置键值"><a href="#_4-为v-for设置键值" class="header-anchor">#</a> 4. 为v-for设置键值</h2> <ul><li>总是用 key 配合 v-for。
+在组件上_总是_必须用 key 配合 v-for，以便维护内部组件及其子树的状态。甚至在元素上维护可预测的行为，比如动画中的对象固化 (object constancy)，也是一种好的做法。</li></ul> <p>正例：</p> <div class="language-js extra-class"><pre class="language-js"><code>
+<span class="token operator">&lt;</span>ul<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>li
+    v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">&quot;todo in todos&quot;</span>
+    <span class="token operator">:</span>key<span class="token operator">=</span><span class="token string">&quot;todo.id&quot;</span>
+  <span class="token operator">&gt;</span>
+    <span class="token punctuation">{</span><span class="token punctuation">{</span> todo<span class="token punctuation">.</span>text <span class="token punctuation">}</span><span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">&gt;</span>
+</code></pre></div><p>反例：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>ul<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>li v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">&quot;todo in todos&quot;</span><span class="token operator">&gt;</span>
+    <span class="token punctuation">{</span><span class="token punctuation">{</span> todo<span class="token punctuation">.</span>text <span class="token punctuation">}</span><span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">&gt;</span>
+</code></pre></div><h2 id="_5-避免-v-if-和-v-for-用在一起"><a href="#_5-避免-v-if-和-v-for-用在一起" class="header-anchor">#</a> 5.避免 v-if 和 v-for 用在一起</h2> <p>永远不要把 v-if 和 v-for 同时用在同一个元素上。
+一般我们在两种常见的情况下会倾向于这样做：</p> <ul><li>为了过滤一个列表中的项目 (比如 v-for=&quot;user in users&quot; v-if=&quot;user.isActive&quot;)。在这种情形下，请将 users 替换为一个计算属性 (比如 activeUsers)，让其返回过滤后的列表。</li> <li>为了避免渲染本应该被隐藏的列表 (比如 v-for=&quot;user in users&quot; v-if=&quot;shouldShowUsers&quot;)。这种情形下，请将 v-if 移动至容器元素上 (比如 ul, ol)。</li></ul> <p>正例：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>ul v<span class="token operator">-</span><span class="token keyword">if</span><span class="token operator">=</span><span class="token string">&quot;shouldShowUsers&quot;</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>li
+    v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">&quot;user in users&quot;</span>
+    <span class="token operator">:</span>key<span class="token operator">=</span><span class="token string">&quot;user.id&quot;</span>
+  <span class="token operator">&gt;</span>
+    <span class="token punctuation">{</span><span class="token punctuation">{</span> user<span class="token punctuation">.</span>name <span class="token punctuation">}</span><span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">&gt;</span>
+</code></pre></div><p>反例：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>ul<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>li
+    v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">&quot;user in users&quot;</span>
+    v<span class="token operator">-</span><span class="token keyword">if</span><span class="token operator">=</span><span class="token string">&quot;shouldShowUsers&quot;</span>
+    <span class="token operator">:</span>key<span class="token operator">=</span><span class="token string">&quot;user.id&quot;</span>
+  <span class="token operator">&gt;</span>
+    <span class="token punctuation">{</span><span class="token punctuation">{</span> user<span class="token punctuation">.</span>name <span class="token punctuation">}</span><span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">&gt;</span>
+</code></pre></div><h2 id="_6-为组件样式设置作用域"><a href="#_6-为组件样式设置作用域" class="header-anchor">#</a> 6. 为组件样式设置作用域</h2> <p>对于应用来说，顶级 App 组件和布局组件中的样式可以是全局的，但是其它所有组件都应该是有作用域的。
+这条规则只和单文件组件有关。你不一定要使用 scoped 特性。设置作用域也可以通过 CSS Modules，那是一个基于 class 的类似 BEM 的策略，当然你也可以使用其它的库或约定。</p> <h3 id="不管怎样-对于组件库-我们应该更倾向于选用基于-class-的策略而不是-scoped-特性。"><a href="#不管怎样-对于组件库-我们应该更倾向于选用基于-class-的策略而不是-scoped-特性。" class="header-anchor">#</a> 不管怎样，对于组件库，我们应该更倾向于选用基于 class 的策略而不是 scoped 特性。</h3> <p>这让覆写内部样式更容易：使用了常人可理解的 class 名称且没有太高的选择器优先级，而且不太会导致冲突。</p> <p>正例：</p> <div class="language-js extra-class"><pre class="language-js"><code>
+<span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>button <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;btn btn-close&quot;</span><span class="token operator">&gt;</span><span class="token constant">X</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
+
+<span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
+<span class="token punctuation">.</span>btn<span class="token operator">-</span>close <span class="token punctuation">{</span>
+  background<span class="token operator">-</span>color<span class="token operator">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">&gt;</span>
+
+<span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>button <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;button button-close&quot;</span><span class="token operator">&gt;</span><span class="token constant">X</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
+
+<span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 使用 <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">scoped</span><span class="token template-punctuation string">`</span></span> 特性 <span class="token operator">--</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>style scoped<span class="token operator">&gt;</span>
+<span class="token punctuation">.</span>button <span class="token punctuation">{</span>
+  <span class="token literal-property property">border</span><span class="token operator">:</span> none<span class="token punctuation">;</span>
+  border<span class="token operator">-</span>radius<span class="token operator">:</span> 2px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token punctuation">.</span>button<span class="token operator">-</span>close <span class="token punctuation">{</span>
+  background<span class="token operator">-</span>color<span class="token operator">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">&gt;</span>
+</code></pre></div><p>反例：</p> <div class="language-js extra-class"><pre class="language-js"><code>
+<span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>button <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;btn btn-close&quot;</span><span class="token operator">&gt;</span><span class="token constant">X</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
+
+<span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>
+<span class="token punctuation">.</span>btn<span class="token operator">-</span>close <span class="token punctuation">{</span>
+  background<span class="token operator">-</span>color<span class="token operator">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">&gt;</span>
+
+<span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>button <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;button button-close&quot;</span><span class="token operator">&gt;</span><span class="token constant">X</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
+
+<span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 使用 <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">scoped</span><span class="token template-punctuation string">`</span></span> 特性 <span class="token operator">--</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>style scoped<span class="token operator">&gt;</span>
+<span class="token punctuation">.</span>button <span class="token punctuation">{</span>
+  <span class="token literal-property property">border</span><span class="token operator">:</span> none<span class="token punctuation">;</span>
+  border<span class="token operator">-</span>radius<span class="token operator">:</span> 2px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token punctuation">.</span>button<span class="token operator">-</span>close <span class="token punctuation">{</span>
+  background<span class="token operator">-</span>color<span class="token operator">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">&gt;</span>
+</code></pre></div><h2 id="二、强烈推荐-增强可读性"><a href="#二、强烈推荐-增强可读性" class="header-anchor">#</a> 二、强烈推荐（增强可读性）</h2> <h2 id="_1-组件文件"><a href="#_1-组件文件" class="header-anchor">#</a> 1. 组件文件</h2> <ul><li>只要有能够拼接文件的构建系统，就把每个组件单独分成文件。</li> <li>当你需要编辑一个组件或查阅一个组件的用法时，可以更快速的找到它。</li></ul> <p>正例：</p> <div class="language-js extra-class"><pre class="language-js"><code>components<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">-</span> TodoList<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> TodoItem<span class="token punctuation">.</span>vue
+</code></pre></div><p>反例：</p> <div class="language-js extra-class"><pre class="language-js"><code>
+Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'TodoList'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'TodoItem'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="_2-单文件组件文件的大小写"><a href="#_2-单文件组件文件的大小写" class="header-anchor">#</a> 2. 单文件组件文件的大小写</h2> <ul><li>单文件组件的文件名应该要么始终是单词大写开头 (PascalCase)</li></ul> <p>正例：</p> <div class="language-js extra-class"><pre class="language-js"><code>components<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">-</span> MyComponent<span class="token punctuation">.</span>vue
+</code></pre></div><p>反例：</p> <div class="language-js extra-class"><pre class="language-js"><code>components<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">-</span> myComponent<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> mycomponent<span class="token punctuation">.</span>vue
+</code></pre></div><h2 id="_3-基础组件名"><a href="#_3-基础组件名" class="header-anchor">#</a> 3. 基础组件名</h2> <ul><li>应用特定样式和约定的基础组件 (也就是展示类的、无逻辑的或无状态的组件) 应该全部以一个特定的前缀开头，比如 Base、App 或 V。</li></ul> <p>正例：</p> <div class="language-js extra-class"><pre class="language-js"><code>components<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">-</span> BaseButton<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> BaseTable<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> BaseIcon<span class="token punctuation">.</span>vue
+</code></pre></div><p>反例：</p> <div class="language-js extra-class"><pre class="language-js"><code>
+components<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">-</span> MyButton<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> VueTable<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> Icon<span class="token punctuation">.</span>vue
+</code></pre></div><h2 id="_4-单例组件名"><a href="#_4-单例组件名" class="header-anchor">#</a> 4. 单例组件名</h2> <ul><li>只应该拥有单个活跃实例的组件应该以 The 前缀命名，以示其唯一性。</li> <li>这不意味着组件只可用于一个单页面，而是每个页面只使用一次。这些组件永远不接受任何 prop，</li> <li>因为它们是为你的应用定制的，而不是它们在你的应用中的上下文。如果你发现有必要添加 prop，</li> <li>那就表明这实际上是一个可复用的组件，只是目前在每个页面里只使用一次。</li></ul> <p>正例：</p> <div class="language-js extra-class"><pre class="language-js"><code>
+components<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">-</span> TheHeading<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> TheSidebar<span class="token punctuation">.</span>vue
+</code></pre></div><p>反例：</p> <div class="language-js extra-class"><pre class="language-js"><code>
+components<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">-</span> Heading<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> MySidebar<span class="token punctuation">.</span>vue
+</code></pre></div><h2 id="_5-紧密耦合的组件名"><a href="#_5-紧密耦合的组件名" class="header-anchor">#</a> 5. 紧密耦合的组件名</h2> <ul><li>和父组件紧密耦合的子组件应该以父组件名作为前缀命名。</li> <li>如果一个组件只在某个父组件的场景下有意义，这层关系应该体现在其名字上。因为编辑器通常会按字母顺序组织文件，所以这样做可以把相关联的文件排在一起。</li></ul> <p>正例：</p> <div class="language-js extra-class"><pre class="language-js"><code>
+components<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">-</span> TodoList<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> TodoListItem<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> TodoListItemButton<span class="token punctuation">.</span>vue
+components<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">-</span> SearchSidebar<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> SearchSidebarNavigation<span class="token punctuation">.</span>vue
+</code></pre></div><p>反例：</p> <div class="language-js extra-class"><pre class="language-js"><code>components<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">-</span> SearchSidebar<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> NavigationForSearchSidebar<span class="token punctuation">.</span>vue
+</code></pre></div><h2 id="_6-组件名中的单词顺序"><a href="#_6-组件名中的单词顺序" class="header-anchor">#</a> 6. 组件名中的单词顺序</h2> <ul><li>组件名应该以高级别的 (通常是一般化描述的) 单词开头，以描述性的修饰词结尾。</li></ul> <p>正例：</p> <div class="language-js extra-class"><pre class="language-js"><code>
+components<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">-</span> SearchButtonClear<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> SearchButtonRun<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> SearchInputQuery<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> SearchInputExcludeGlob<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> SettingsCheckboxTerms<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> SettingsCheckboxLaunchOnStartup<span class="token punctuation">.</span>vue
+</code></pre></div><p>反例：</p> <div class="language-js extra-class"><pre class="language-js"><code>
+components<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">-</span> ClearSearchButton<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> ExcludeFromSearchInput<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> LaunchOnStartupCheckbox<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> RunSearchButton<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> SearchInput<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> TermsCheckbox<span class="token punctuation">.</span>vue
+</code></pre></div><h2 id="_7-模板中的组件名大小写"><a href="#_7-模板中的组件名大小写" class="header-anchor">#</a> 7. 模板中的组件名大小写</h2> <ul><li>总是 PascalCase 的</li></ul> <p>正例：</p> <div class="language-js extra-class"><pre class="language-js"><code>
+<span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 在单文件组件和字符串模板中 <span class="token operator">--</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>MyComponent<span class="token operator">/</span><span class="token operator">&gt;</span>
+</code></pre></div><p>反例：</p> <div class="language-js extra-class"><pre class="language-js"><code>
+<span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 在单文件组件和字符串模板中 <span class="token operator">--</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>mycomponent<span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 在单文件组件和字符串模板中 <span class="token operator">--</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>myComponent<span class="token operator">/</span><span class="token operator">&gt;</span>
+</code></pre></div><h2 id="_8-完整单词的组件名"><a href="#_8-完整单词的组件名" class="header-anchor">#</a> 8. 完整单词的组件名</h2> <ul><li>组件名应该倾向于完整单词而不是缩写。</li></ul> <p>正例：</p> <div class="language-js extra-class"><pre class="language-js"><code>components<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">-</span> StudentDashboardSettings<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> UserProfileOptions<span class="token punctuation">.</span>vue
+</code></pre></div><p>反例：</p> <div class="language-js extra-class"><pre class="language-js"><code>components<span class="token operator">/</span>
+<span class="token operator">|</span><span class="token operator">-</span> SdSettings<span class="token punctuation">.</span>vue
+<span class="token operator">|</span><span class="token operator">-</span> UProfOpts<span class="token punctuation">.</span>vue
+</code></pre></div><h2 id="_9-多个特性的元素"><a href="#_9-多个特性的元素" class="header-anchor">#</a> 9. 多个特性的元素</h2> <ul><li>多个特性的元素应该分多行撰写，每个特性一行。</li></ul> <p>正例：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>img
+  src<span class="token operator">=</span><span class="token string">&quot;https://vuejs.org/images/logo.png&quot;</span>
+  alt<span class="token operator">=</span><span class="token string">&quot;Vue Logo&quot;</span>
+<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>MyComponent
+  foo<span class="token operator">=</span><span class="token string">&quot;a&quot;</span>
+  bar<span class="token operator">=</span><span class="token string">&quot;b&quot;</span>
+  baz<span class="token operator">=</span><span class="token string">&quot;c&quot;</span>
+<span class="token operator">/</span><span class="token operator">&gt;</span>
+</code></pre></div><p>反例：</p> <div class="language-js extra-class"><pre class="language-js"><code>
+<span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token string">&quot;https://vuejs.org/images/logo.png&quot;</span> alt<span class="token operator">=</span><span class="token string">&quot;Vue Logo&quot;</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>MyComponent foo<span class="token operator">=</span><span class="token string">&quot;a&quot;</span> bar<span class="token operator">=</span><span class="token string">&quot;b&quot;</span> baz<span class="token operator">=</span><span class="token string">&quot;c&quot;</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+</code></pre></div><h2 id="_10-模板中简单的表达式"><a href="#_10-模板中简单的表达式" class="header-anchor">#</a> 10. 模板中简单的表达式</h2> <ul><li>组件模板应该只包含简单的表达式，复杂的表达式则应该重构为计算属性或方法。</li> <li>复杂表达式会让你的模板变得不那么声明式。我们应该尽量描述应该出现的是什么，而非如何计算那个值。而且计算属性和方法使得代码可以重用。</li></ul> <p>正例：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 在模板中 <span class="token operator">--</span><span class="token operator">&gt;</span>
+<span class="token punctuation">{</span><span class="token punctuation">{</span> normalizedFullName <span class="token punctuation">}</span><span class="token punctuation">}</span>
+<span class="token comment">// 复杂表达式已经移入一个计算属性</span>
+<span class="token literal-property property">computed</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">normalizedFullName</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>fullName<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">word</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> word<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> word<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>反例：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">{</span><span class="token punctuation">{</span>
+  fullName<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">word</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> word<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> word<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">}</span>
+</code></pre></div><h2 id="_11-简单的计算属性"><a href="#_11-简单的计算属性" class="header-anchor">#</a> 11. 简单的计算属性</h2> <p>正例：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token literal-property property">computed</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">basePrice</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>manufactureCost <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> <span class="token keyword">this</span><span class="token punctuation">.</span>profitMargin<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">discount</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>basePrice <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>discountPercent <span class="token operator">||</span> <span class="token number">0</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">finalPrice</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>basePrice <span class="token operator">-</span> <span class="token keyword">this</span><span class="token punctuation">.</span>discount
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><p>反例：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token literal-property property">computed</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">price</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> basePrice <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>manufactureCost <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> <span class="token keyword">this</span><span class="token punctuation">.</span>profitMargin<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      basePrice <span class="token operator">-</span>
+      basePrice <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>discountPercent <span class="token operator">||</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="_12-带引号的特性值"><a href="#_12-带引号的特性值" class="header-anchor">#</a> 12. 带引号的特性值</h2> <ul><li>非空 HTML 特性值应该始终带引号 (单引号或双引号，选你 JS 里不用的那个)。</li> <li>在 HTML 中不带空格的特性值是可以没有引号的，但这样做常常导致带空格的特征值被回避，导致其可读性变差。</li></ul> <p>正例：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>AppSidebar <span class="token operator">:</span>style<span class="token operator">=</span><span class="token string">&quot;{ width: sidebarWidth + 'px' }&quot;</span><span class="token operator">&gt;</span>
+</code></pre></div><p>反例：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>AppSidebar <span class="token operator">:</span>style<span class="token operator">=</span><span class="token punctuation">{</span><span class="token literal-property property">width</span><span class="token operator">:</span>sidebarWidth<span class="token operator">+</span><span class="token string">'px'</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+</code></pre></div><h2 id="_13-指令缩写"><a href="#_13-指令缩写" class="header-anchor">#</a> 13. 指令缩写</h2> <ul><li>都用指令缩写 (用 : 表示 v-bind: 和用 @ 表示 v-on:)</li></ul> <p>正例：</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span>
+  <span class="token attr-name">@input</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>onInput<span class="token punctuation">&quot;</span></span>
+  <span class="token attr-name">@focus</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>onFocus<span class="token punctuation">&quot;</span></span>
+<span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>反例：</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span>
+  <span class="token attr-name"><span class="token namespace">v-bind:</span>value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>newTodoText<span class="token punctuation">&quot;</span></span>
+  <span class="token attr-name">:placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>newTodoInstructions<span class="token punctuation">&quot;</span></span>
+<span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="三、谨慎使用"><a href="#三、谨慎使用" class="header-anchor">#</a> 三、谨慎使用</h2> <h2 id="_1-没有在-v-if-v-if-else-v-else-中使用-key"><a href="#_1-没有在-v-if-v-if-else-v-else-中使用-key" class="header-anchor">#</a> 1. 没有在 v-if/v-if-else/v-else 中使用 key</h2> <ul><li>如果一组 v-if + v-else 的元素类型相同，最好使用 key。</li></ul> <p>正例：</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span>
+  <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>error<span class="token punctuation">&quot;</span></span>
+  <span class="token attr-name">key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>search-status<span class="token punctuation">&quot;</span></span>
+<span class="token punctuation">&gt;</span></span>
+  错误：{{ error }}
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span>
+  <span class="token attr-name">v-else</span>
+  <span class="token attr-name">key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>search-results<span class="token punctuation">&quot;</span></span>
+<span class="token punctuation">&gt;</span></span>
+  {{ results }}
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>反例：</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>error<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  错误：{{ error }}
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">v-else</span><span class="token punctuation">&gt;</span></span>
+  {{ results }}
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="_2-scoped-中的元素选择器"><a href="#_2-scoped-中的元素选择器" class="header-anchor">#</a> 2. scoped 中的元素选择器</h2> <ul><li>元素选择器应该避免在 scoped 中出现。</li> <li>在 scoped 样式中，类选择器比元素选择器更好，因为大量使用元素选择器是很慢的。</li></ul> <p>正例：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>button <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;btn btn-close&quot;</span><span class="token operator">&gt;</span><span class="token constant">X</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
+
+<span class="token operator">&lt;</span>style scoped<span class="token operator">&gt;</span>
+<span class="token punctuation">.</span>btn<span class="token operator">-</span>close <span class="token punctuation">{</span>
+  background<span class="token operator">-</span>color<span class="token operator">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">&gt;</span>
+</code></pre></div><p>反例：</p> <div class="language-html extra-class"><pre class="language-html"><code>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">&gt;</span></span>X<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">scoped</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+<span class="token selector">button</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="_3-隐性的父子组件通信"><a href="#_3-隐性的父子组件通信" class="header-anchor">#</a> 3. 隐性的父子组件通信</h2> <ul><li>应该优先通过 prop 和事件进行父子组件之间的通信，而不是 this.$parent 或改变 prop。</li></ul> <p>正例：</p> <div class="language-js extra-class"><pre class="language-js"><code>
+Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'TodoItem'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">props</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">todo</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">type</span><span class="token operator">:</span> Object<span class="token punctuation">,</span>
+      <span class="token literal-property property">required</span><span class="token operator">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">template</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    &lt;input
+      :value=&quot;todo.text&quot;
+      @input=&quot;$emit('input', $event.target.value)&quot;
+    &gt;
+  </span><span class="token template-punctuation string">`</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>反例：</p> <div class="language-js extra-class"><pre class="language-js"><code>
+Vue<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'TodoItem'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">props</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">todo</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">type</span><span class="token operator">:</span> Object<span class="token punctuation">,</span>
+      <span class="token literal-property property">required</span><span class="token operator">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function">removeTodo</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">var</span> vm <span class="token operator">=</span> <span class="token keyword">this</span>
+      vm<span class="token punctuation">.</span>$parent<span class="token punctuation">.</span>todos <span class="token operator">=</span> vm<span class="token punctuation">.</span>$parent<span class="token punctuation">.</span>todos<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">todo</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> todo<span class="token punctuation">.</span>id <span class="token operator">!==</span> vm<span class="token punctuation">.</span>todo<span class="token punctuation">.</span>id
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">template</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+    &lt;span&gt;
+      {{ todo.text }}
+      &lt;button @click=&quot;removeTodo&quot;&gt;
+        X
+      &lt;/button&gt;
+    &lt;/span&gt;
+  </span><span class="token template-punctuation string">`</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="_4-非-flux-的全局状态管理"><a href="#_4-非-flux-的全局状态管理" class="header-anchor">#</a> 4. 非 Flux 的全局状态管理</h2> <ul><li>应该优先通过 Vuex 管理全局状态，而不是通过 this.$root 或一个全局事件总线。</li></ul> <p>正例：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// store/modules/todos.js</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">state</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">list</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">mutations</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token constant">REMOVE_TODO</span> <span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span> todoId</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      state<span class="token punctuation">.</span>list <span class="token operator">=</span> state<span class="token punctuation">.</span>list<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">todo</span> <span class="token operator">=&gt;</span> todo<span class="token punctuation">.</span>id <span class="token operator">!==</span> todoId<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">actions</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function">removeTodo</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> commit<span class="token punctuation">,</span> state <span class="token punctuation">}</span><span class="token punctuation">,</span> todo</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">commit</span><span class="token punctuation">(</span><span class="token string">'REMOVE_TODO'</span><span class="token punctuation">,</span> todo<span class="token punctuation">.</span>id<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-html extra-class"><pre class="language-html"><code><span class="token comment">&lt;!-- TodoItem.vue --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>
+    {{ todo.text }}
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>removeTodo(todo)<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      X
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">import</span> <span class="token punctuation">{</span> mapActions <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vuex'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">props</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">todo</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">type</span><span class="token operator">:</span> Object<span class="token punctuation">,</span>
+      <span class="token literal-property property">required</span><span class="token operator">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token function">mapActions</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'removeTodo'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>反例：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// main.js</span>
+<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">todos</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">created</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$on</span><span class="token punctuation">(</span><span class="token string">'remove-todo'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>removeTodo<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">removeTodo</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">todo</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">var</span> todoIdToRemove <span class="token operator">=</span> todo<span class="token punctuation">.</span>id
+      <span class="token keyword">this</span><span class="token punctuation">.</span>todos <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>todos<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">todo</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> todo<span class="token punctuation">.</span>id <span class="token operator">!==</span> todoIdToRemove
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="四、推荐"><a href="#四、推荐" class="header-anchor">#</a> 四、推荐</h2> <h2 id="_1-推荐使用vs-code进行前端编码-规定tab大小为2个空格"><a href="#_1-推荐使用vs-code进行前端编码-规定tab大小为2个空格" class="header-anchor">#</a> 1. 推荐使用vs code进行前端编码，规定Tab大小为2个空格</h2> <h3 id="vs-code配置"><a href="#vs-code配置" class="header-anchor">#</a> vs code配置</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">{</span>
+  <span class="token string-property property">&quot;editor.tabSize&quot;</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+  <span class="token string-property property">&quot;workbench.startupEditor&quot;</span><span class="token operator">:</span> <span class="token string">&quot;newUntitledFile&quot;</span><span class="token punctuation">,</span>
+  <span class="token string-property property">&quot;workbench.iconTheme&quot;</span><span class="token operator">:</span> <span class="token string">&quot;vscode-icons&quot;</span><span class="token punctuation">,</span>
+  <span class="token comment">// 以下为stylus配置</span>
+  <span class="token string-property property">&quot;stylusSupremacy.insertColons&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 是否插入冒号</span>
+  <span class="token string-property property">&quot;stylusSupremacy.insertSemicolons&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 是否插入分好</span>
+  <span class="token string-property property">&quot;stylusSupremacy.insertBraces&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 是否插入大括号</span>
+  <span class="token string-property property">&quot;stylusSupremacy.insertNewLineAroundImports&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// import之后是否换行</span>
+  <span class="token string-property property">&quot;stylusSupremacy.insertNewLineAroundBlocks&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 两个选择器中是否换行</span>
+  <span class="token string-property property">&quot;vetur.format.defaultFormatter.html&quot;</span><span class="token operator">:</span> <span class="token string">&quot;js-beautify-html&quot;</span><span class="token punctuation">,</span>
+  <span class="token string-property property">&quot;eslint.autoFixOnSave&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token string-property property">&quot;eslint.validate&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;javascript&quot;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token string-property property">&quot;language&quot;</span><span class="token operator">:</span> <span class="token string">&quot;html&quot;</span><span class="token punctuation">,</span>
+      <span class="token string-property property">&quot;autoFix&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token string-property property">&quot;language&quot;</span><span class="token operator">:</span> <span class="token string">&quot;vue&quot;</span><span class="token punctuation">,</span>
+      <span class="token string-property property">&quot;autoFix&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;javascriptreact&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;html&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;vue&quot;</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token string-property property">&quot;eslint.options&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token string-property property">&quot;plugins&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;html&quot;</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string-property property">&quot;prettier.singleQuote&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token string-property property">&quot;prettier.semi&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token string-property property">&quot;javascript.format.insertSpaceBeforeFunctionParenthesis&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token string-property property">&quot;vetur.format.js.InsertSpaceBeforeFunctionParenthesis&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token string-property property">&quot;vetur.format.defaultFormatter.js&quot;</span><span class="token operator">:</span> <span class="token string">&quot;prettier&quot;</span><span class="token punctuation">,</span>
+  <span class="token comment">// &quot;prettier.eslintIntegration&quot;: true</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="_2-vs-code-插件"><a href="#_2-vs-code-插件" class="header-anchor">#</a> 2. vs code 插件</h2> <ul><li>Auto Close Tag</li> <li>Path Intellisense</li> <li>Prettier</li> <li>Vetur</li> <li>vscode-icons</li> <li>Auto Rename Tag</li> <li>Code Spell Checker</li> <li>Turbo Console Log</li> <li>javascript Console utils</li> <li>TODO highlight</li> <li>Vue 3 Support - All In One</li> <li>Bracket Pair Colorizer</li> <li>VSCode Icons</li> <li>Import Cost</li> <li>HTML/CSS/JavaScript Snippets</li> <li>CSS Peek</li> <li>Live Server</li> <li>Chinese</li> <li>open in browser</li> <li>Beautify</li> <li>JavaScript (ES6) code snippets</li> <li>Npm Intellisense</li></ul> <h2 id="代码风格规范类插件"><a href="#代码风格规范类插件" class="header-anchor">#</a> 代码风格规范类插件</h2> <ul><li>ESLint</li> <li>TSLint</li> <li>Code Spell Checker</li> <li>Better Align</li> <li>change-case</li> <li>Better Comments</li> <li>GitHistory</li> <li>GitLens</li> <li>TODO Tree</li></ul> <h2 id="其他插件-神器"><a href="#其他插件-神器" class="header-anchor">#</a> 其他插件（神器）</h2> <ul><li>Partial Diff</li> <li>Markdown All in One</li> <li>Polacode-2020</li> <li>REST Client</li> <li>vscode-drawio</li> <li>JavaScript Booster</li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/javascript.html" class="prev">
+        JavaScript 规范
+      </a></span> <span class="next"><a href="/react.html">
+        React规范
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.2f108bbb.js" defer></script><script src="/assets/js/2.bb75b389.js" defer></script><script src="/assets/js/14.71e3d84a.js" defer></script>
+  </body>
+</html>
